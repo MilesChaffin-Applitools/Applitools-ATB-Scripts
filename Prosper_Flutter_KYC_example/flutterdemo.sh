@@ -10,7 +10,7 @@ case "$1" in
     echo "Executing Flutter Integration Test"
     flutter -d Chrome drive --driver=test_driver/integration_test_applitools.dart --target=integration_test/main_test_applitools.dart -d web-server --browser-name=chrome
     echo "Uploading Images to Applitools"
-    java -jar ImageTester_3.0.1.jar -k $APPLITOOLS_API_KEY -a ATBProsper -fb 'Prosper Integration Test' -st -f screenshots/
+    java -jar ImageTester_3.1.5.jar -k $APPLITOOLS_API_KEY -a ATBProsper -fb 'Prosper Integration Test' -st -f screenshots/
     echo "Moving screenshots to archive"
     mv screenshots/*.* screenshot_archive/
     echo "Test Complete - Review Visual Differences in Applitools"
