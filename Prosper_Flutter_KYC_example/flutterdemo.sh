@@ -3,8 +3,8 @@ case "$1" in
    "-visual")
     echo "Removing Previous Log"
     rm *.log
-    export APPLITOOLS_API_KEY=
-    export APPLITOOLS_SERVER_URL="atbeyes.applitools.com"
+    export APPLITOOLS_API_KEY="DUZBmlg3T7vmEv4GBQeyehDEn107zO5KaRDh4HM104h1lUU110"
+    export APPLITOOLS_SERVER_URL="https://atbeyes.applitools.com"
     echo "Starting Chromedriver on port 4444"
     chromedriver --port=4444 &
     echo "Executing Flutter Integration Test"
