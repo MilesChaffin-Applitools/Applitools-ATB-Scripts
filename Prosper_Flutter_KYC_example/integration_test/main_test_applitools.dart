@@ -15,18 +15,18 @@ void main() {
     app.main();
     await pumpFramesFor(tester, const Duration(seconds: 5));
     await tester.pumpAndSettle();
-    await binding.takeScreenshot('Home Screen');
+    await binding.takeScreenshot('Address Completer/Home Screen');
 
     final Finder addressFieldFinder = find
         .byKey(const ValueKey<String>('address_field'), skipOffstage: false);
 
     await tester.ensureVisible(addressFieldFinder);
     await tester.pumpAndSettle();
-    await binding.takeScreenshot('Home Screen');
+    await binding.takeScreenshot('Address Completer/Home Screen');
 
     await tester.tap(addressFieldFinder);
     await tester.pumpAndSettle();
-    await binding.takeScreenshot('Click Address');
+    await binding.takeScreenshot('Address Completer/Click Address');
 
     final Finder addressSearchFieldFinder = find.descendant(
         of: find.byKey(const ValueKey<String>('address_completer_search_view')),
@@ -40,7 +40,7 @@ void main() {
     controller.text = '501 Montreal';
     await tester.pumpAndSettle();
     await pumpFramesFor(tester, const Duration(seconds: 7));
-    await binding.takeScreenshot('Search for ' + controller.text);
+    await binding.takeScreenshot('Address Completer/Search for ' + controller.text);
 
     final Finder addressEntryFinder =
       find.byWidgetPredicate((Widget widget) =>
@@ -57,7 +57,7 @@ void main() {
     await tester.tap(addressEntryFinder);
     await tester.pumpAndSettle();
     await pumpFramesFor(tester, const Duration(seconds: 7));
-    await binding.takeScreenshot('Tap on Address');
+    await binding.takeScreenshot('Address Completer/Tap on Address');
     expect(find.text(address.fullAddress), findsOneWidget);
   });
 }
